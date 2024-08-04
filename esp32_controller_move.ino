@@ -15,6 +15,8 @@ void loop() {
   while (ps5.isConnected() == true) {
     Serial2.printf("X%d", (int)((uint8_t)(ps5.LStickX())/25.6));
     Serial2.printf("Y%d", (int)((uint8_t)(ps5.LStickY())/25.6));
+    Serial.printf("(%d,%d)", (int)((uint8_t)(ps5.LStickX())/25.6), (int)((uint8_t)(ps5.LStickY())/25.6));
+    Serial.println("");
     delay(10);
   }
 }
