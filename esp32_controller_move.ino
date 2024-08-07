@@ -4,7 +4,7 @@ void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
   Serial2.begin(9600, SERIAL_8N1, 16,17);
-  ps5.begin("10:18:49:45:44:b2"); //replace with MAC address of your controller
+  ps5.begin("10:18:49:fc:f0:ee"); //replace with MAC address of your controller
 }
 
 void loop() {
