@@ -10,9 +10,16 @@ void setup() {
 void loop() {
   while (ps5.isConnected() == false) { // commented out as ps5 controller seems to connect quicker when microcontroller is doing nothing
     Serial.println("PS5 controller not found");
-    delay(300);
+    uint8_t data[9] = {};
+    data[8] = 4;
+    Serial2.printf("%c", 0xff);
+    for (int i = 0; i <= 8; i++){
+      Serial2.printf("%c", data[i]);
+    }
+    delay(10);
   }
   while (ps5.isConnected() == true) {
+    Serial.println("connected!");
     uint8_t data[9];
     data[0] = (uint8_t)(ps5.LStickX());//気を付けよう！
     data[1] = (uint8_t)(ps5.LStickY());
